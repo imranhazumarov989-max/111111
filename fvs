@@ -1,0 +1,26 @@
+import random
+
+def deaf_grandma():
+    goodbye_count = 0
+    
+    while goodbye_count < 3:
+        user_input = input("> ")
+        
+        if user_input == "ПОКА!":
+            goodbye_count += 1
+            if goodbye_count == 3:
+                print("ДО СВИДАНИЯ, МИЛЫЙ!")
+                break
+            else:
+                year = random.randint(1930, 1950)
+                print(f"НЕТ, НИ РАЗУ С {year} ГОДА!")
+        elif user_input.isupper():
+            goodbye_count = 0  # сбрасываем счётчик, если не "ПОКА!"
+            year = random.randint(1930, 1950)
+            print(f"НЕТ, НИ РАЗУ С {year} ГОДА!")
+        else:
+            goodbye_count = 0  # сбрасываем счётчик
+            print("АСЬ?! ГОВОРИ ГРОМЧЕ, ВНУЧЕК!")
+
+if __name__ == "__main__":
+    deaf_grandma()
